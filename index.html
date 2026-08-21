@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タニムラ医院 - 京都市西京区の精神科・心療内科</title>
+  <meta name="description" content="医療法人灯心会タニムラ医院。京都市西京区桂の精神科・心療内科。不眠・うつ・不安・パニック・ADHD等の専門治療。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #8B2020;
+      --brand-dark: #6B1818;
+      --slate-deep: #1a1a2e;
+      --slate-mid: #555;
+      --bg: #fafaf8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--slate-deep);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: var(--slate-deep);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    header p {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      letter-spacing: 0.15em;
+    }
+
+    /* Notice Banner */
+    .notice {
+      background: #FFF3CD;
+      border: 1px solid #FFECB5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+    .notice strong { color: var(--brand); }
+
+    /* Section */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 16px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      color: var(--slate-deep);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand);
+      letter-spacing: 0.05em;
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .schedule-table th, .schedule-table td {
+      padding: 8px 4px;
+      border: 1px solid #e0e0e0;
+    }
+    .schedule-table th {
+      background: var(--slate-deep);
+      color: white;
+      font-weight: 500;
+    }
+    .schedule-table .closed { color: var(--brand); font-weight: 700; }
+    .schedule-note {
+      font-size: 0.8rem;
+      color: var(--slate-mid);
+      margin-top: 8px;
+    }
+
+    /* Info List */
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+    }
+    .info-item:last-child { border-bottom: none; }
+    .info-label {
+      min-width: 80px;
+      font-weight: 700;
+      color: var(--slate-deep);
+      font-size: 0.8rem;
+    }
+    .info-value a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+    .info-value a:hover { text-decoration: underline; }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .cta-primary {
+      background: var(--brand);
+      color: white;
+    }
+    .cta-primary:hover { background: var(--brand-dark); }
+    .cta-secondary {
+      background: white;
+      color: var(--slate-deep);
+      border: 1px solid #ddd;
+    }
+    .cta-secondary:hover { background: #f5f5f5; }
+    .cta-line {
+      background: #06C755;
+      color: white;
+    }
+    .cta-line:hover { background: #05B04C; }
+
+    /* Doctor */
+    .doctor-info {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .doctor-info img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid #e0e0e0;
+    }
+    .doctor-text h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .doctor-text .role {
+      font-size: 0.75rem;
+      color: var(--slate-mid);
+      margin-bottom: 8px;
+    }
+    .qualifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .qualifications span {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      color: var(--slate-mid);
+    }
+
+    /* Map */
+    .map-container {
+      width: 100%;
+      height: 250px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.75rem;
+      color: var(--slate-mid);
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.3rem; }
+      section { padding: 20px 16px; }
+      .doctor-info { flex-direction: column; align-items: center; text-align: center; }
+      .qualifications { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>タニムラ医院</h1>
+  <p>京都市西京区の精神科・心療内科</p>
+</header>
+
+<div class="container">
+
+  <div class="notice">
+    <strong>ホームページメンテナンスのお知らせ</strong><br>
+    8月23日（土）〜 8月25日（月）の間、ホームページのメンテナンスを実施しております。
+    ご予約・お問い合わせは下記よりお願いいたします。
+  </div>
+
+  <!-- ご予約・お問い合わせ -->
+  <section>
+    <h2>ご予約・お問い合わせ</h2>
+    <div class="cta-group">
+      <a href="https://ssc11.doctorqube.com/tanimura-iin/" target="_blank" rel="noopener" class="cta-btn cta-primary">
+        Web予約（ドクターキューブ）
+      </a>
+      <a href="tel:075-392-6811" class="cta-btn cta-secondary">
+        電話予約：075-392-6811
+      </a>
+      <a href="https://lin.ee/z4YTqT7" target="_blank" rel="noopener" class="cta-btn cta-line">
+        LINE公式アカウント
+      </a>
+    </div>
+  </section>
+
+  <!-- 診療時間 -->
+  <section>
+    <h2>診療時間</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日祝</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>9:00〜12:00</td>
+          <td class="closed">×</td><td>○</td><td>○</td><td class="closed">×</td><td>○</td><td>○</td><td class="closed">×</td>
+        </tr>
+        <tr>
+          <td>13:30〜16:30</td>
+          <td>○</td><td>○</td><td class="closed">×</td><td>○</td><td class="closed">×</td><td class="closed">×</td><td class="closed">×</td>
+        </tr>
+        <tr>
+          <td>16:30〜19:30</td>
+          <td>○</td><td class="closed">×</td><td>○</td><td>○</td><td>○</td><td class="closed">×</td><td class="closed">×</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="schedule-note">
+      休診日：月曜午前・木曜午前・日曜・祝日<br>
+      9月5日（金）は学会出張のため終日休診いたします。
+    </p>
+  </section>
+
+  <!-- 医師紹介 -->
+  <section>
+    <h2>院長紹介</h2>
+    <div class="doctor-info">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663126328526/caAKPV5ERGD5ZTQDvuGmoM/doctor-tanimura-photo_8649d0f9.webp" alt="谷村洋平 院長">
+      <div class="doctor-text">
+        <h3>谷村 洋平</h3>
+        <p class="role">理事長・院長</p>
+        <div class="qualifications">
+          <span>精神科専門医・指導医</span>
+          <span>精神保健指定医</span>
+          <span>認定産業医</span>
+          <span>睡眠学会総合専門医・指導医</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section>
+    <h2>アクセス</h2>
+    <div class="info-item">
+      <span class="info-label">住所</span>
+      <span class="info-value">〒615-8073<br>京都府京都市西京区桂野里町41-75 2階</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">電話</span>
+      <span class="info-value"><a href="tel:075-392-6811">075-392-6811</a></span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">最寄駅</span>
+      <span class="info-value">阪急京都線「桂」駅 西口より徒歩3分</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">駐車場</span>
+      <span class="info-value">近隣にコインパーキングあり</span>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.5!2d135.7082!3d34.9847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001079e5a6c5555%3A0x5555555555555555!2z44K_44OL44Og44Op5Yy76Zmi!5e0!3m2!1sja!2sjp!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section>
+    <h2>お知らせ</h2>
+    <div class="info-item">
+      <span class="info-label">2026.08.21</span>
+      <span class="info-value">8月23日〜25日の間、ホームページのメンテナンスを実施いたします。ご予約はドクターキューブまたはお電話にて承ります。</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">2026.08.11</span>
+      <span class="info-value">9月5日（金）は学会出張のため終日休診いたします。</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">2026.08.11</span>
+      <span class="info-value">AI相談機能の不正利用に対し、法的措置を講じております。</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">2026.07</span>
+      <span class="info-value">精神科医・谷村洋平によるYouTubeチャンネルを開設いたしました。</span>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>医療法人灯心会 タニムラ医院</p>
+  <p>〒615-8073 京都府京都市西京区桂野里町41-75 2階 / TEL: 075-392-6811</p>
+  <p style="margin-top:8px; font-size:0.7rem; color:#999;">本ページはメンテナンス期間中の臨時ページです。通常のホームページは8月25日以降に復旧いたします。</p>
+</footer>
+
+</body>
+</html>
